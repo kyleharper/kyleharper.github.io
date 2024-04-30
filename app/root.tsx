@@ -6,6 +6,13 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import url from "~/tailwind-o.css?url";
+import {LinksFunction} from "@remix-run/node";
+
+export const links: LinksFunction = () => [
+    { rel: "stylesheet", href: url },
+];
+
 export default function App() {
   return (
     <html lang="en">
