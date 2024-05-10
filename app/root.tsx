@@ -1,4 +1,4 @@
-import { LinksFunction } from '@remix-run/node';
+import type { LinksFunction } from '@remix-run/node';
 import {
   Links,
   Meta,
@@ -9,7 +9,7 @@ import {
 import url from '~/tailwind-o.css?url';
 import { Container } from '~/ui/container';
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: url }];
+export let links: LinksFunction = () => [{ rel: 'stylesheet', href: url }];
 
 export default function App() {
   return (

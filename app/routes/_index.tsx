@@ -6,7 +6,7 @@ import { Extract } from '~/ui/extract';
 import { Footer } from '~/ui/footer';
 import { Hr } from '~/ui/hr';
 
-export const meta: MetaFunction = () => {
+export let meta: MetaFunction = () => {
   return [
     { title: 'Kyle Harper' },
     { name: 'description', content: 'Kyle Harper, Product Engineer' },
