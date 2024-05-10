@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 export default {
   content: ['./app/**/*.{js,jsx,ts,tsx,mdx}'],
@@ -6,7 +6,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans'],
-      }
+      },
     },
   },
-} satisfies Config
+  plugins: [require('@tailwindcss/typography')],
+} satisfies Config;

@@ -1,0 +1,15 @@
+.env
+pnpm-lock.yaml
+
+build
+coverage
+
+node_modules
+
+/build
+/public/build
+/server-build
+
+/playwright-report/
+/playwright/.cache/
+

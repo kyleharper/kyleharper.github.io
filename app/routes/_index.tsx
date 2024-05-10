@@ -1,25 +1,51 @@
-import type { MetaFunction } from "@remix-run/node";
-import {Container} from "~/ui/container";
+import type { MetaFunction } from '@remix-run/node';
+import * as blogPosts from '~/data/blog';
+import type { Post } from '~/data/blog';
+import { About } from '~/ui/about';
+import { Extract } from '~/ui/extract';
+import { Footer } from '~/ui/footer';
+import { Hr } from '~/ui/hr';
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Kyle Harper" },
-    { name: "description", content: "Kyle Harper, Product Engineer" },
+    { title: 'Kyle Harper' },
+    { name: 'description', content: 'Kyle Harper, Product Engineer' },
   ];
 };
 
 export default function Index() {
+  let posts = Object.entries(blogPosts).filter(
+    ([name]) => name !== 'default',
+  ) as unknown as [[name: string, module: Post]];
+
   return (
-    <Container>
-      <div className="h-screen flex items-center justify-center">
-        <p className="text-xl tracking-tight">
-          Kyle Harper, Product Engineer currently Engineering Manager @ <a className="text-blue-600 dark:text-blue-500 hover:underline" href="https://www.bynder.com/en/">Bynder</a>. 😊
-          <span className="block">
-            <a className="p-1 text-blue-600 dark:text-blue-500 hover:underline" href="https://twitter.com/kyleharperllama">@kyleharperllama</a> /
-            <a className="p-1 text-blue-600 dark:text-blue-500 hover:underline" href="https://github.com/kyleharper">github</a>
-          </span>
-        </p>
+    <div className="h-screen flex items-center justify-center flex-wrap">
+      <div className="tracking-tight text-center">
+        <main>
+          <h1>Kyle Harper</h1>
+          <About />
+        </main>
+
+        <Hr />
+
+        <aside>
+          <h2 className="mt-0">Blog</h2>
+          {posts.map(([name, module]) => (
+            <Extract
+              key={name}
+              title={module.title}
+              date={module.date}
+              href={module.filepath
+                .replace('app/routes/blog.', 'blog/')
+                .replace('.mdx', '')}
+            />
+          ))}
+        </aside>
+
+        <Hr />
+
+        <Footer className="text-center" />
       </div>
-    </Container>
+    </div>
   );
 }
