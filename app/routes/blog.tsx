@@ -1,6 +1,7 @@
 import type { MetaFunction } from '@remix-run/node';
 import { Outlet } from '@remix-run/react';
 import { Footer } from '~/ui/footer';
+import { Header } from '~/ui/header';
 import { Hr } from '~/ui/hr';
 
 export let meta: MetaFunction = () => {
@@ -17,16 +18,8 @@ export default function Blog() {
         'w-full prose-headings:tracking-tight prose-blockquote:bg-slate-50 prose-blockquote:border-slate-300 prose-blockquote:px-10 prose-blockquote:py-2'
       }
     >
-      <header className="mb-20">
-        <nav>
-          <a href="/" className="mr-2 no-underline hover:underline">
-            Kyle Harper
-          </a>
-        </nav>
-      </header>
-
+      <Header />
       <Outlet />
-      <Hr />
       <Footer />
     </article>
   );

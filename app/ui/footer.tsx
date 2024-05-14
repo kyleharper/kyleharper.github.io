@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Hr } from '~/ui/hr';
 import { Link } from '~/ui/link';
 
 interface Props {
@@ -8,7 +9,9 @@ interface Props {
 
 export function Footer(props: Props) {
   return (
-    <footer className={`w-full ${props.className || ''}`}>
+    <footer className={`w-full mb-5 ${props.className || ''}`}>
+      <Hr />
+
       <nav>
         <Link href="https://twitter.com/kyleharperllama" className="pr-2">
           @kyleharperllama

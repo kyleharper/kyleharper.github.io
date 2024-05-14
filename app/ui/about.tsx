@@ -2,7 +2,7 @@ import { Link } from '~/ui/link';
 
 export function About() {
   return (
-    <p className="leading-relaxed text-xl mb-20">
+    <p className="leading-relaxed text-xl mb-10">
       Founding Engineer at{' '}
       <Link href="https://gathercontent.com">GatherContent</Link> (acq 22).{' '}
       <span className="md:block">
