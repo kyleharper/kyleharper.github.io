@@ -17,7 +17,7 @@ export function Extract(props: Props) {
         </Link>
         <Date>{props.date}</Date>
       </div>
-      <p className="text-slate-500">{props.intro}</p>
+      <p className="text-slate-500 mt-2">{props.intro}</p>
     </article>
   );
 }
