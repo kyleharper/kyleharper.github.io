@@ -15,7 +15,7 @@ export default function Blog() {
   return (
     <article
       className={
-        'w-full prose-headings:tracking-tight prose-blockquote:bg-slate-50 prose-blockquote:border-slate-300 prose-blockquote:px-10 prose-blockquote:py-2'
+        'w-full prose-h2:text-3xl prose-headings:tracking-tight prose-blockquote:bg-slate-50 prose-blockquote:border-slate-300 prose-blockquote:px-10 prose-blockquote:py-2'
       }
     >
       <Header />

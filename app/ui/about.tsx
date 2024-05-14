@@ -8,9 +8,11 @@ export function About() {
         Founding Engineer at{' '}
         <Link href="https://gathercontent.com">GatherContent</Link> (acq 22).{' '}
         <span className="md:block">
-          Previously Frontend Lead at{' '}
-          <Link href="https://wearejh.com/">JH</Link> &{' '}
-          <Link href="https://un.titled.com">Un.titled</Link>.
+          Previously Frontend Lead{' '}
+          <span className="block sm:inline">
+            at <Link href="https://wearejh.com/">JH</Link> &{' '}
+            <Link href="https://un.titled.com">Un.titled</Link>.
+          </span>
         </span>
       </p>
     </Callout>

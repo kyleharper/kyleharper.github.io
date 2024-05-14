@@ -1126,12 +1126,12 @@ video {
   margin-top: 2.5rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -1197,16 +1197,8 @@ video {
   line-height: 1.75rem;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
 .font-semibold {
   font-weight: 600;
-}
-
-.leading-relaxed {
-  line-height: 1.625;
 }
 
 .leading-snug {
@@ -1501,6 +1493,11 @@ video {
   letter-spacing: -0.025em;
 }
 
+.prose-h2\:text-3xl :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .prose-blockquote\:border-slate-300 :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
@@ -1519,6 +1516,16 @@ video {
 .prose-blockquote\:py-2 :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:inline {
+    display: inline;
+  }
 }
 
 @media (min-width: 768px) {
