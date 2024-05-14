@@ -6,7 +6,6 @@ import { Extract } from '~/ui/extract';
 import { Footer } from '~/ui/footer';
 import { Header } from '~/ui/header';
 import { Hr } from '~/ui/hr';
-import { Logo } from '~/ui/logo';
 
 export let meta: MetaFunction = () => {
   return [
