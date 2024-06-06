@@ -10,9 +10,7 @@ export default defineConfig({
 			/* jsxImportSource: …, otherOptions… */
 			recmaPlugins: [recmaExportFilepath],
 		}),
-		remix({
-			ssr: false,
-		}),
+		remix(),
 		tsconfigPaths(),
 	],
 });

@@ -12,5 +12,16 @@
 	},
 	"formatter": {
 		"ignore": ["node_modules", "build"]
-	}
+	},
+	"overrides": [
+		{
+			"linter": {
+				"rules": {
+					"style": {
+						"useConst": "off"
+					}
+				}
+		}
+		}
+	]
 }

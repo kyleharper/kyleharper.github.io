@@ -9,20 +9,21 @@
 		"dev": "concurrently \"npm run dev:css\" \"remix vite:dev\"",
 		"dev:css": "tailwindcss -w -i ./app/tailwind.css -o app/tailwind-o.css",
 		"check": "biome check --apply ./*",
-		"start": "http-server -p 3000 build/client/",
+		"start": "remix-serve ./build/server/index.js",
 		"typecheck": "tsc"
 	},
 	"dependencies": {
 		"@mdx-js/rollup": "^3.0.1",
 		"@remix-run/node": "^2.9.2",
 		"@remix-run/react": "^2.9.2",
-		"http-server": "^14.1.1",
+		"@remix-run/serve": "^2.9.2",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"recma-export-filepath": "^1.1.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.7.3",
+		"@flydotio/dockerfile": "^0.5.7",
 		"@remix-run/dev": "^2.9.2",
 		"@tailwindcss/typography": "^0.5.13",
 		"@types/react": "^18.3.3",
