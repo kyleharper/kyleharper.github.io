@@ -17,9 +17,9 @@
 	},
 	"dependencies": {
 		"@mdx-js/rollup": "^3.0.1",
-		"@remix-run/react": "^2.9.2",
 		"@remix-run/cloudflare": "^2.9.2",
 		"@remix-run/cloudflare-pages": "^2.9.2",
+		"@remix-run/react": "^2.9.2",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"recma-export-filepath": "^1.1.0"
