@@ -4,16 +4,16 @@
 	"sideEffects": false,
 	"type": "module",
 	"scripts": {
-		"build": "npm run build:css && remix vite:build",
+		"build": "pnpm run build:css && remix vite:build",
 		"build:css": "tailwindcss -m -i ./app/tailwind.css -o app/tailwind-o.css",
-		"deploy": "npm run build && wrangler pages deploy",
-		"dev": "concurrently \"npm run dev:css\" \"remix vite:dev\"",
+		"deploy": "pnpm run build && wrangler pages deploy",
+		"dev": "concurrently \"pnpm run dev:css\" \"remix vite:dev\"",
 		"dev:css": "tailwindcss -w -i ./app/tailwind.css -o app/tailwind-o.css",
 		"check": "biome check --apply ./*",
 		"start": "wrangler pages dev ./build/client",
 		"typecheck": "tsc",
 		"typegen": "wrangler types",
-		"preview": "npm run build && wrangler pages dev"
+		"preview": "pnpm run build && wrangler pages dev"
 	},
 	"dependencies": {
 		"@mdx-js/rollup": "^3.0.1",
