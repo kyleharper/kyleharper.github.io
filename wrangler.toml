@@ -2,6 +2,7 @@
 name = "kyleharper-github-io"
 compatibility_date = "2024-06-05"
 pages_build_output_dir = "./build/client"
+node_version = "20.11.0"
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Pages Function, running it closer to your back-end infrastructure
@@ -16,7 +17,7 @@ pages_build_output_dir = "./build/client"
 # Note: Use secrets to store sensitive data.
 # - https://developers.cloudflare.com/pages/functions/bindings/#secrets
 # [vars]
-# MY_VARIABLE = "production_value"
+NODE_VERSION = "20.11.0"
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#workers-ai
