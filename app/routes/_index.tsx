@@ -1,4 +1,4 @@
-import { json, type MetaFunction } from '@remix-run/node';
+import { json, type MetaFunction } from '@remix-run/cloudflare';
 import * as blogPosts from "~/data/blog";
 import type { Post } from "~/data/blog";
 import { About } from "~/ui/about";

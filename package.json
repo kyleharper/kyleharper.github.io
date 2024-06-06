@@ -6,24 +6,27 @@
 	"scripts": {
 		"build": "npm run build:css && remix vite:build",
 		"build:css": "tailwindcss -m -i ./app/tailwind.css -o app/tailwind-o.css",
+		"deploy": "npm run build && wrangler pages deploy",
 		"dev": "concurrently \"npm run dev:css\" \"remix vite:dev\"",
 		"dev:css": "tailwindcss -w -i ./app/tailwind.css -o app/tailwind-o.css",
 		"check": "biome check --apply ./*",
-		"start": "remix-serve ./build/server/index.js",
-		"typecheck": "tsc"
+		"start": "wrangler pages dev ./build/client",
+		"typecheck": "tsc",
+		"typegen": "wrangler types",
+		"preview": "npm run build && wrangler pages dev"
 	},
 	"dependencies": {
 		"@mdx-js/rollup": "^3.0.1",
-		"@remix-run/node": "^2.9.2",
 		"@remix-run/react": "^2.9.2",
-		"@remix-run/serve": "^2.9.2",
+		"@remix-run/cloudflare": "^2.9.2",
+		"@remix-run/cloudflare-pages": "^2.9.2",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"recma-export-filepath": "^1.1.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.7.3",
-		"@flydotio/dockerfile": "^0.5.7",
+		"@cloudflare/workers-types": "^4.20240605.0",
 		"@remix-run/dev": "^2.9.2",
 		"@tailwindcss/typography": "^0.5.13",
 		"@types/react": "^18.3.3",
@@ -32,7 +35,8 @@
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.4.5",
 		"vite": "^5.2.12",
-		"vite-tsconfig-paths": "^4.3.2"
+		"vite-tsconfig-paths": "^4.3.2",
+		"wrangler": "^3.59.0"
 	},
 	"engines": {
 		"node": ">=20.0.0"

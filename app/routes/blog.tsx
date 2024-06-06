@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/cloudflare";
 import { Outlet } from "@remix-run/react";
 import { Footer } from "~/ui/footer";
 import { Header } from "~/ui/header";
