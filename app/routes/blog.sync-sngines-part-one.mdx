@@ -1,0 +1,46 @@
+import { Callout } from '../ui/callout';
+
+export let title = 'Sync Engines, Part One';
+export let date = '24th Nov 24';
+export let intro = `More and more apps are using Local-First and Sync Engines to work better - and I’m keen to understand more!`;
+
+# Sync Engines, Part One
+
+<Callout>
+  **{intro}**
+</Callout>
+
+After watching videos on Sync Engines I’m super excited to understand the concept of Local-First and Sync Engines, so I’ll be running a few experiments, keeping them simple enough to get a basic grasp on what it takes to build products using these approaches. If you’re interested, here are some of the videos I watched:
+- Tuomas Artmans - “[Scaling the Linear Sync Engine](https://www.youtube.com/watch?v=Wo2m3jaJixU)”
+- Stepan Parunashvili - “[Building a Sync Engine in Clojure](https://www.youtube.com/watch?v=6FikTQf8qho)”
+- Aaron Boodman on Local First Podcast - “[From Google Gears to Replicache & Reflect.net](https://www.youtube.com/watch?v=cgTIsTWoNkM)”
+
+Sync Engines aren’t a new concept. According to [Conrad Hofmeyr](https://www.powersync.com/blog/local-first-software-origins-and-evolution):
+
+> The research lab [Ink & Switch](https://www.inkandswitch.com/) published the original [manifesto essay](https://www.inkandswitch.com/local-first/) which coined the term ‘local-first’ in 2019, authored by [Martin Kleppmann](https://martin.kleppmann.com/), Adam Wiggins, Peter van Hardenberg and Mark McGranaghan.
+
+Thanks to the likes of Figma, Notion and Linear the idea seems to gaining popularity, but this isn’t a post about the origins or future of Local-First so...moving on.
+
+## How are we going to approach the experiment?
+
+After some high-level research, there are a few key areas I wish to focus on:
+
+1. **Syncing**. I’ve done this a few ways in traditional client-server architectures, but what about in Local-First? How are transactions (or mutations) created and managed?
+2. **Conflict management**. Although syncing is part of the process, I want to focus on this because it’s a key component.
+3. **Data storage**. Another component of many Local-First apps is end-to-end encryption and utilising the client’s computing power. I’ve seen flat / single-table storage solutions in frameworks like [instantdb](https://www.instantdb.com/), but I want to understand more.
+
+This will be a practical series of experiments. I might record my discovery sessions but at the very least I’ll share my findings here.
+
+## Are you going to use Frameworks?
+
+Yes and no.
+
+Discovering how certain frameworks perform and what APIs are available will be insightful. Mostly I’ll write various tests or create small environments to present my research.
+
+## Next step
+
+Our first topic is **Syncing.**
+
+We’ll build an environment that demonstrates the process of syncing data between clients. We’ll see where that takes us and from there, either **Conflict Management** or if we discover a new topic then we may start that 😄
+
+Until next time 👋
