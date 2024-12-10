@@ -5,7 +5,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Inter", "sans"],
+				sans: ["Inter", "sans", "sans-serif"],
 			},
 		},
 	},
