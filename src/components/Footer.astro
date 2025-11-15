@@ -1,0 +1,21 @@
+---
+import Hr from './Hr.astro';
+import Link from './Link.astro';
+
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<footer class={`w-full mb-5 ${className || ''}`}>
+	<Hr />
+	<nav>
+		<Link href="https://twitter.com/kyleharperllama" class="pr-2">
+			@kyleharperllama
+		</Link>
+		<Link href="https://github.com/kyleharper">github</Link>
+	</nav>
+	<slot />
+</footer>

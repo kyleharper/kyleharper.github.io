@@ -4,38 +4,31 @@
 	"sideEffects": false,
 	"type": "module",
 	"scripts": {
-		"build": "pnpm run build:css && remix vite:build",
-		"build:css": "tailwindcss -m -i ./app/tailwind.css -o app/tailwind-o.css",
-		"deploy": "pnpm run build && wrangler pages deploy",
-		"dev": "concurrently \"pnpm run dev:css\" \"remix vite:dev\"",
-		"dev:css": "tailwindcss -w -i ./app/tailwind.css -o app/tailwind-o.css",
+		"dev": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
 		"check": "biome check --write ./*",
-		"start": "wrangler pages dev ./build/client",
-		"typecheck": "tsc",
-		"typegen": "wrangler types",
-		"preview": "pnpm run build && wrangler pages dev"
+		"typecheck": "astro check",
+		"deploy": "pnpm run build && wrangler pages deploy ./dist"
 	},
 	"dependencies": {
-		"@mdx-js/rollup": "^3.1.0",
-		"@remix-run/cloudflare": "^2.15.1",
-		"@remix-run/cloudflare-pages": "^2.15.1",
-		"@remix-run/react": "^2.15.1",
+		"@astrojs/cloudflare": "^12.6.10",
+		"@astrojs/mdx": "^4.3.10",
+		"@astrojs/react": "^4.4.2",
+		"@astrojs/tailwind": "^6.0.2",
+		"astro": "^5.15.7",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"recma-export-filepath": "^1.1.0"
+		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@cloudflare/workers-types": "^4.20241205.0",
-		"@remix-run/dev": "^2.15.1",
 		"@tailwindcss/typography": "^0.5.15",
 		"@types/react": "^19.0.1",
 		"@types/react-dom": "^19.0.2",
-		"concurrently": "^9.1.0",
 		"tailwindcss": "^3.4.16",
 		"typescript": "^5.7.2",
 		"vite": "^6.0.3",
-		"vite-tsconfig-paths": "^5.1.4",
 		"wrangler": "^3.95.0"
 	},
 	"engines": {

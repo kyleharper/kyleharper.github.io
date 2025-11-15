@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Header from '~/components/Header.astro';
+import About from '~/components/About.astro';
+import Hr from '~/components/Hr.astro';
+import Extract from '~/components/Extract.astro';
+import Footer from '~/components/Footer.astro';
+
+export const prerender = true;
+
+const posts = await getCollection('blog');
+// Sort posts by date (newest first)
+const sortedPosts = posts.sort((a, b) => {
+	// Simple date comparison - you may want to use a proper date parser
+	return b.data.date.localeCompare(a.data.date);
+});
+---
+
+<BaseLayout title="Kyle Harper" description="Kyle Harper, Product Engineer">
+	<div>
+		<Header />
+
+		<main>
+			<h1>Kyle Harper</h1>
+			<About />
+		</main>
+
+		<Hr />
+
+		<aside>
+			<h2 class="mt-0">Blog</h2>
+			{
+				sortedPosts.map((post) => (
+					<Extract
+						title={post.data.title}
+						date={post.data.date}
+						intro={post.data.intro}
+						href={`/blog/${post.slug}`}
+					/>
+				))
+			}
+		</aside>
+
+		<Footer />
+	</div>
+</BaseLayout>
