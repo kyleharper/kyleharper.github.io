@@ -10,10 +10,18 @@ import Footer from '~/components/Footer.astro';
 export const prerender = true;
 
 const posts = await getCollection('blog');
+
+// Parse date strings like "05 Dec 25" or "24th Nov 24" into Date objects
+function parseDate(dateStr: string): Date {
+	const cleaned = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
+	const [day, month, year] = cleaned.split(' ');
+	const fullYear = parseInt(year) + 2000;
+	return new Date(`${day} ${month} ${fullYear}`);
+}
+
 // Sort posts by date (newest first)
 const sortedPosts = posts.sort((a, b) => {
-	// Simple date comparison - you may want to use a proper date parser
-	return b.data.date.localeCompare(a.data.date);
+	return parseDate(b.data.date).getTime() - parseDate(a.data.date).getTime();
 });
 ---
 
